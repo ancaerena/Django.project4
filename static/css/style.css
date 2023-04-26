@@ -1,9 +1,9 @@
 body {
-    background-color: #F9FAFC;
+    background-color: #000000;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: Roboto Slab, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: #0a0a16;
@@ -13,16 +13,12 @@ body {
     color: #4052b5;
 }
 
-.thin {
-    font-weight: 300;
-}
-
 .light-bg {
     background-color: #fff;
 }
 
 .dark-bg {
-    background-color: #92bbe8;
+    background-color: #001327;
 }
 
 .main-bg {
