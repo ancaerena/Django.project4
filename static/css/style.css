@@ -9,6 +9,11 @@ body {
     color: #0a0a16;
 }
 
+.bg-white {
+    background-image: url("https://img.fruugo.com/product/7/55/712979557_max.jpg");
+    background-color: #fff;
+}
+
 .red-o {
     color: #4052b5;
 }
@@ -114,7 +119,7 @@ body {
 }
 
 .link {
-    color: #23BBBB;
+    color: #4052b5;
     text-decoration: none;
 }
 
@@ -132,7 +137,7 @@ body {
 
 .btn-like:hover,
 .btn-like:active {
-    color: #4052b5;
+    color: #4096b5;
     background: transparent;
     border: none;
 }
