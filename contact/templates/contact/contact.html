@@ -1,4 +1,9 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static '//static/css/style.css' %}">
+
+{% block content %}
 {% load crispy_forms_tags %}
 
 <form action="" method="post">
