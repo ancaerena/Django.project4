@@ -5,10 +5,6 @@ from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
 
-from django.conf import settings
-from django.contrib import comments
-from django.contrib.comments.views.moderation import perform_delete
-
 
 class PostList(generic.ListView):
     model = Post
@@ -82,15 +78,3 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-def delete_comment(request):
-    id = request.POST['comment_id']
-    pk = request.POST['blogs_id']
-    if request.method == 'POST':
-        comment = get_object_or_404(Comment, id=id, pk=pk)
-        try:
-            comment.delete()
-            messages.success(request, 'You have successfully deleted the comment')
-        except:
-            messages.warning(request, 'The comment could not be deleted.')
-            
-    return redirect('get_posts')
