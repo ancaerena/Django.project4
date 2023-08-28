@@ -33,7 +33,7 @@ DEBUG = False
 
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
-ALLOWED_HOSTS = ['the-office.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['the-office.herokuapp.com', 'localhost', '*']
 
 
 # Application definition
