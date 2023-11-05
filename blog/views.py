@@ -5,6 +5,9 @@ from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
 from django.views.generic.edit import UpdateView
+from django.views.generic.edit import DeleteView
+from django.views.generic.edit import CreateView
+
 
 
 class PostList(generic.ListView):
@@ -79,18 +82,38 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+class PostCreate(CreateView):
+ 
+    # specify the model for create view
+    model = Post
+ 
+    # specify the fields to be displayed
+ 
+    fields = "__all__"
+
+    template_name = "post_form.html"
+
 class PostUpdateView(UpdateView):
     # specify the model you want to use
     model = Post
  
     # specify the fields
-    fields = [
-        "title",
-        "description"
-    ]
- 
+    fields = "__all__"
+    
     # can specify success url
     # url to redirect after successfully
     # updating details
     success_url ="/"
 
+    template_name = "postedit_form.html"
+
+class PostDeleteView(DeleteView):
+    # specify the model you want to use
+    model = Post
+     
+    # can specify success url
+    # url to redirect after successfully
+    # deleting object
+    success_url ="/"
+
+    template_name = "post_confirm_detele.html"

@@ -61,6 +61,7 @@
                 </div>
             </div>
         </div>
+       
     </div>
     <div class="row">
         <div class="col">
@@ -112,6 +113,9 @@
             </div>
         </div>
     </div>
+    <a href="{% url 'post_form' %}"><button>Create a New Post</button></a>
+    <a href="{% url 'post_update' %}"><button>Edit Post</button></a>
+    <a href="{% url 'post_delete' %}"><button>Delete Post</button></a>
 </div>
 
 {% endblock content %}
