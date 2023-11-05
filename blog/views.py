@@ -4,6 +4,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
 from .forms import CommentForm
+from django.views.generic.edit import UpdateView
 
 
 class PostList(generic.ListView):
@@ -77,4 +78,19 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+class PostUpdateView(UpdateView):
+    # specify the model you want to use
+    model = Post
+ 
+    # specify the fields
+    fields = [
+        "title",
+        "description"
+    ]
+ 
+    # can specify success url
+    # url to redirect after successfully
+    # updating details
+    success_url ="/"
 
