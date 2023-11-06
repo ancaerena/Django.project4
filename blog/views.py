@@ -94,7 +94,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
     template_name = "blog/post_form.html"
 
-    login_url = "accounts/"
+    login_url = "/accounts/login/"
     redirect_field_name = "redirect_to"
 
 class PostUpdateView(LoginRequiredMixin, UpdateView):
@@ -111,7 +111,7 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
     template_name = "blog/postedit_form.html"
 
-    login_url = "accounts/"
+    login_url = "/accounts/login/"
     redirect_field_name = "redirect_to"
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
@@ -125,5 +125,5 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
     template_name = "blog/post_confirm_delete.html"
 
-    login_url = "accounts/"
-    redirect_field_name = "account/login.html"
+    login_url = "/accounts/login/"
+    redirect_field_name = "redirect_to"

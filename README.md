@@ -89,6 +89,10 @@ Along with the Home screen with the display of the posts, there's also a Registe
 <img src="static/assets/images/error.jpg" alt="creating a table of content for comments">
 <br>
 <br>
+- Error Page Not Found 404 when adding the LoginRequiredMixin to classes PostCreate, PostUpdateView and PostDeleteView, as login_url was not found initially, as I have added the html page for login. After checking the error page, I found the login_url is looking into URL patterns, so I've added '/accounts/login/' as the login_url and the page worked, redirecting unlogged users to the login page.
+<br>
+<img src="static/assets/images/accountserror.jpg" alt="creating a table of content for comments">
+<br>
 <h2>Data Model</h2>
 <br>
 The code has models, templates and views, working on the Django framework.<br>
@@ -100,10 +104,7 @@ The workspace was deployed to Heroku at the beginning, leaving for a final deplo
 <br>
 <h2>Testing</h2>
 <br>
-- Unfortunatelly, the terminal gave me the error when trying to run my tests: Permission denied to create database.<br>
-I have tried installing coverage, but that did not solve the issue. I looked for answers on stackoverflow, <br> but none of the results helped to fix it<br>
-Which is why the tests weren't performed, the lack of time didn't allow me to try out things as they were giving other errors.
-<br>
+
 <br>
 <h3>Validator testing</h3>
 <br>
