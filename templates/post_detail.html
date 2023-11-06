@@ -114,8 +114,9 @@
         </div>
     </div>
     <a href="{% url 'post_form' %}"><button>Create a New Post</button></a>
-    <a href="{% url 'post_update' %}"><button>Edit Post</button></a>
-    <a href="{% url 'post_delete' %}"><button>Delete Post</button></a>
+    <a href="{% url 'post_update' post.pk %}"><button>Edit Post</button></a>
+    <a href="{% url 'post_delete' post.pk %}"><button>Delete Post</button></a>
+    <br>
 </div>
 
 {% endblock content %}

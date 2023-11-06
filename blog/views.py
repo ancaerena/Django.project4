@@ -7,6 +7,7 @@ from .forms import CommentForm
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from django.views.generic.edit import CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
@@ -82,7 +83,7 @@ class PostLike(View):
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin, CreateView):
  
     # specify the model for create view
     model = Post
@@ -91,9 +92,12 @@ class PostCreate(CreateView):
  
     fields = "__all__"
 
-    template_name = "post_form.html"
+    template_name = "blog/post_form.html"
 
-class PostUpdateView(UpdateView):
+    login_url = "accounts/"
+    redirect_field_name = "redirect_to"
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     # specify the model you want to use
     model = Post
  
@@ -105,9 +109,12 @@ class PostUpdateView(UpdateView):
     # updating details
     success_url ="/"
 
-    template_name = "postedit_form.html"
+    template_name = "blog/postedit_form.html"
 
-class PostDeleteView(DeleteView):
+    login_url = "accounts/"
+    redirect_field_name = "redirect_to"
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     # specify the model you want to use
     model = Post
      
@@ -116,4 +123,7 @@ class PostDeleteView(DeleteView):
     # deleting object
     success_url ="/"
 
-    template_name = "post_confirm_detele.html"
+    template_name = "blog/post_confirm_delete.html"
+
+    login_url = "accounts/"
+    redirect_field_name = "account/login.html"
