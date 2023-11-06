@@ -102,7 +102,14 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
  
     # specify the fields
-    fields = "__all__"
+    fields = [
+            "title",
+            "author",
+            "featured_image",
+            "excerpt",
+            "content",
+            
+        ]
     
     # can specify success url
     # url to redirect after successfully
