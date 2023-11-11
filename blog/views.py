@@ -7,7 +7,7 @@ from .forms import CommentForm
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from django.views.generic.edit import CreateView
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 
 
 
@@ -97,7 +97,7 @@ class PostCreate(LoginRequiredMixin, CreateView):
     login_url = "/accounts/login/"
     redirect_field_name = "redirect_to"
 
-class PostUpdateView(LoginRequiredMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     # specify the model you want to use
     model = Post
  
@@ -118,10 +118,15 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
     template_name = "blog/postedit_form.html"
 
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
+
     login_url = "/accounts/login/"
     redirect_field_name = "redirect_to"
 
-class PostDeleteView(LoginRequiredMixin, DeleteView):
+
+class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     # specify the model you want to use
     model = Post
      
@@ -131,6 +136,10 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
     success_url ="/"
 
     template_name = "blog/post_confirm_delete.html"
+
+    def test_func(self):
+        obj = self.get_object()
+        return obj.author == self.request.user
 
     login_url = "/accounts/login/"
     redirect_field_name = "redirect_to"
