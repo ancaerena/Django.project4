@@ -149,3 +149,4 @@ The depolyed project can be found here: https://the-office.herokuapp.com/
 - djangocentral.com<br>
 - Sarah in Tutor assistance from Code Institute. <br>
 - geeksforgeeks.org forum for creating UpdateView and DeleteView classes https://www.geeksforgeeks.org/class-based-generic-views-django-create-retrieve-update-delete/
+- learndjango.com forum for restricting permision to edit or delete post to authors only

@@ -94,6 +94,8 @@ class PostCreate(LoginRequiredMixin, CreateView):
 
     template_name = "blog/post_form.html"
 
+    success_url ="/"
+
     login_url = "/accounts/login/"
     redirect_field_name = "redirect_to"
 
