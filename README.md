@@ -104,7 +104,65 @@ The workspace was deployed to Heroku at the beginning, leaving for a final deplo
 <br>
 <h2>Testing</h2>
 <br>
-
+- Home Page
+<br>
+Home page performs as expected, displaying a list of posts, with a short excerpt of the article, highlight it when hovered over
+<br>
+<img src="static/assets/images/homePage.jpg" alt="home page of the blog">
+<br>
+-The users can Register or login to their accounts. Once registered or logged in, the LogOut tab is showing. When users register, or login/logout, a successfull message is displayed:
+<br>
+<img src="static/assets/images/SignUp.jpg" alt="register page">
+<img src="static/assets/images/registerMessage.jpg" alt="register comfirmation message">
+<br>
+<img src="static/assets/images/SignInMessage.jpg" alt="sign in message">
+<img src="static/assets/images/signedOutMessage.jpg" alt="signed out message">
+<img src="static/assets/images/signOutConfirm.jpg" alt="signed out comfirmation">
+<br>
+- Create. Edit. Delete
+<br>
+<img src="static/assets/images/CreateEditDelete.jpg" alt="edit create and delete buttons">
+<br>
+- The users have the option to create a post, once logged in. They can also delete or edit a post, but only if they are the authors of the post. All three features work as expected, reverting to the sign in page in case user is not logged in, trowing a Forbbiden page in case a user who is not the author is trying to edit or delete a post.
+<br>
+<img src="static/assets/images/LoginToCreatePost.jpg" alt="reverted to login page">
+<img src="static/assets/images/EditPostError.jpg" alt="edit post error">
+<img src="static/assets/images/EditPostAdmin.jpg" alt="allowing to edit a post for a user">
+<img src="static/assets/images/deletePostAdmin.jpg" alt="allowing to edit a post for a user">
+<br>
+- All users, once logged in, are allowed to create a new post. Once the post is created, the user is reverted to the home page, where the latest post will be displayed first.
+<br>
+<img src="static/assets/images/AddPost.jpg" alt="adding a post">
+<img src="static/assets/images/AddPostResult.jpg" alt="results of a new post">
+<br>
+- Comments
+<br>
+<img src="static/assets/images/Comments.jpg" alt="comments section">
+<br>
+- Once logged in, users can leave a comment on a certain post. To do so, they need to open the detailed page of a post and scroll at the bottom and use the Comment section. The username will be pulled into the form. All comments will be submitted for approval on the admin side. Once approved, they will be displayed at the bottom of that post.
+<br>
+<img src="static/assets/images/CommentsApproval.jpg" alt="comments approval request">
+<br>
+- Contact Us page
+<br>
+<img src="static/assets/images/ContactUs.jpg" alt="contact us page">
+<br>
+- Any user can contact the admin page through a Contact us form. Once the user leaves their details, the message is sent to the admin pannel.
+And the user is directed to a success message page confirming his message was submitted.
+<br>
+<img src="static/assets/images/ContactUsAdmin.jpg" alt="contacts admin panel page">
+<br>
+<img src="static/assets/images/ContactUsSuccess.jpg" alt="contact us success message">
+<br>
+- Like feature
+<br>
+<img src="static/assets/images/LikeButton.jpg" alt="the heart icon to like a blog post">
+<br>
+- Each post has a heart icon to like it. Once users are logged in, they can press the heart to like the post. 
+This also works to revers it, pressing it again will unlike the post, giving the user control over this, in case they change their mind.
+<br>
+<img src="static/assets/images/LikeButtonOn.jpg" alt="actioned like button">
+<br>
 <br>
 <h3>Validator testing</h3>
 <br>
